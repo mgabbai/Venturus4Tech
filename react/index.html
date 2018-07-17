@@ -1,0 +1,162 @@
+<html>
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+        <title>VJobs</title>
+    </head>
+    <body>
+        <!--Barra de navegação-->
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <a class="navbar-brand" href="#">
+                        <img src="C:\Users\Marcio\Documents\GitHub\Venturus4Tech\react\recursos\logo-h-vjobs.png" alt="" width="90" height="50" class="d-inline-block align-top">
+                    </a>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Vagas </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Sobre </a>
+                    </li>
+                </ul>           
+            </div>
+        </nav>
+        <div class="container" style="padding: 10px">
+
+        <!--Colapse Button-->
+
+            <p>
+                <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseButtonNovaVaga" role="button" aria-expanded="false" aria-controls="collapseButtonNovaVaga">
+                    <i class="fas fa-plus"></i> Nova Vaga
+                </button>
+            </p>
+
+        <!--Colapse DIV-->
+            <div class="collapse" id="collapseButtonNovaVaga">
+                <div class="card card-body">
+                    <form>
+
+                        <div class="form-group">
+                            <label for="formGroupNomeInput">Nome</label>
+                            <input type="text" class="form-control" id="formGroupNomeInput" placeholder="Insira o nome aqui da vaga">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupDescricao">Descrição</label>
+                            <textarea class="form-control" id="FormControlTextareaDescricao" rows="3" placeholder="Insira a descrição aqui"></textarea>
+                        </div>
+
+                        <p>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label for="formGroupHabilidades">Habilidades Necessárias</label>
+                                    <textarea class="form-control" id="FormControlTextareaHabilidades" rows="3" placeholder="Insira as habiilidades"></textarea>
+                                </div>
+                                <div class="col">
+                                        <label for="formGroupDiferenciais">Diferenciais</label>
+                                        <textarea class="form-control" id="FormControlTextareaDiferenciais" rows="3" placeholder="Insira os diferenciais"></textarea>
+                                </div>
+                            </div>
+                        </p>
+
+                        <p>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label for="formGroupSalarioInput">Salário Base</label>
+                                    <input type="text" class="form-control" id="formGroupSalarioInput" placeholder="Informe o Salário Base">
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="formControlArea">Área</label>
+                                        <select class="form-control" id="formControlArea">
+                                            <option>Desenvolvimento</option>
+                                            <option>Testes</option>
+                                            <option>Full-stack</option>
+                                            <option>Back-end</option>
+                                            <option>Front-end</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </p>
+
+                        <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkPCD">
+                                <label class="form-check-label" for="checkPCD">
+                                  Vaga para PCD
+                                </label>
+                        </div>
+                              
+                        <p>
+                            <button type="submit" class="btn btn-success" style="right:10px; ">Criar Vaga</button>
+                        </p>
+                    </form>               
+                 </div>
+            </div>
+            
+            <!--Cards-->
+            
+            <div class="row" style="padding: 10px">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="C:\Users\Marcio\Documents\GitHub\Venturus4Tech\react\recursos\developer.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Desenvolverdor Front-end JR</h5>
+                            <p class="card-text"><b>Descrição:</b></p>
+                            <p>Profissional que goste de trabalhar em um ambiente dinâmico com desenvolvimento de software e que tenha experiência em desenvolvimento full stack.</p>
+                            <p><b>Salário Base:</b></p>
+                            <p>R$ 10,00</p>
+                            <a href="#" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                        </div>
+                    </div>                
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="C:\Users\Marcio\Documents\GitHub\Venturus4Tech\react\recursos\designer.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Designer UI/UX PL</h5>
+                            <p class="card-text"><b>Descrição:</b></p>
+                            <p>Profissional que goste de trabalhar em um ambiente dinâmico com desenvolvimento de software e que tenha experiência em desenvolvimento full stack.</p>
+                            <p><b>Salário Base:</b></p>
+                            <p>R$ 100,00</p>
+                            <a href="#" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                        </div>
+                    </div>                
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="C:\Users\Marcio\Documents\GitHub\Venturus4Tech\react\recursos\tester.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Teste - Estágio</h5>
+                            <p class="card-text"><b>Descrição:</b></p>
+                            <p>Profissional que goste de trabalhar em um ambiente dinâmico com desenvolvimento de software e que tenha experiência em desenvolvimento full stack.</p>
+                            <p><b>Salário Base:</b></p>
+                            <p>R$ 2,00</p>
+                            <a href="#" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+        </div>
+       
+        
+   
+    </body>
+
+</html>
