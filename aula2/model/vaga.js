@@ -10,3 +10,4 @@ class Vaga {
         this.isActive = isActive;
     }
 }
+module.exports = Vaga;
