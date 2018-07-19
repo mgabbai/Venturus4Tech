@@ -1,5 +1,7 @@
 'use strict';
 
+let jobs = require('../../config/jobs');
+const Job = require('../../model/job');
 module.exports = app => {
 
     app.get('/jobs', async(req, res) => {
