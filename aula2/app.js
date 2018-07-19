@@ -18,9 +18,25 @@ app.get('/vagas', async(req, res) => {
 
 //This get not work yet
 app.get('/vagas/:id', async(req, res) => {
-    let id = req.params.id;
-    let find = vagas.filter(el => { return el == id });
-    return res.send(find);
+    return res.send(vagas.find(el => el.id == req.params.id));
+})
+
+app.put('/vagas/:id', async(req, res) => {
+    try {
+        if (!req.body) {
+            return res.status(403).send('Necessário algo para trocar');
+        }
+        let index = await vagas.findIndex(job => job.id === req.params.id);
+        if (index >= 0) {
+            Object.keys(req.body).forEach(job => {
+                vagas[index][job] = req.body[job]
+            })
+            return res.send(`Vaga ${req.params.id} alterada`)
+        }
+        return res.send('Não foi encontrada a vaga com esse id')
+    } catch (error) {
+        return res.status(403).send('Necessário algo para trocar');
+    }
 })
 app.post('/vagas', async(req, res) => {
     try {
