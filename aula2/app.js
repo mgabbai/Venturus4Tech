@@ -16,6 +16,12 @@ app.get('/vagas', async(req, res) => {
     return res.send(vagas);
 })
 
+//This get not work yet
+app.get('/vagas/:id', async(req, res) => {
+    let id = req.params.id;
+    let find = vagas.filter(id);
+    return res.send(find);
+})
 app.post('/vagas', async(req, res) => {
     try {
         let vagasLength = vagas.length;
