@@ -1,11 +1,26 @@
 'use strict';
 
-let jobs = require('../../config/jobs');
 const Job = require('../../model/job');
 module.exports = app => {
 
+    const jobsCollection = app.config.firebaseConfig.collection('jobs');
+
     app.get('/jobs', async(req, res) => {
-        return res.send(jobs);
+        try {
+            const docs = await jobsCollection.get();
+            let jobs = [];
+            docs.forEach(doc => {
+                jobs.push(doc);
+            })
+            return res.send(jobs);
+        } catch (error) {
+            return releaseEvents.status(500).send('error');
+        }
+
+    })
+
+    app.get('/', async(req, res) => {
+        return res.redirect('http://localhost:3000/vjobs/index.html');
     })
 
     app.get('/jobs/:id', async(req, res) => {
