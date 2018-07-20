@@ -1,147 +1,162 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="./index.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+
     <title>VJobs</title>
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand" href="#"><img class="logo" src="./logo-h-vjobs.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link text-white" href="#">Vagas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Sobre</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light  bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="logo-h-vjobs.png" style="width: 100px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active text-white" href="#">Vagas</a>
+                <a class="nav-item nav-link text-white" href="#">Sobre</a>
+            </div>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row mt-3 mb-3">
-            <div class="col-12">
-                <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-              Nova vaga
-            </button>
-                <div class="collapse mt-3" id="collapseExample">
-                    <div class="card card-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Nome</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome da vaga">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Descrição</label>
-                                <textarea type="text" rows="4" class="form-control" id="exampleInputPassword1" placeholder="Descrição"></textarea>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-6">
-                                    <label for="exampleInputPassword1">Habilidades necessárias</label>
-                                    <textarea type="text" rows="4" class="form-control" id="exampleInputPassword1" placeholder="Habilidades"></textarea>
-                                </div>
-                                <div class="form-group col-6">
-                                    <label for="exampleInputPassword1">Diferenciais</label>
-                                    <textarea type="text" rows="4" class="form-control" id="exampleInputPassword1" placeholder="Diferenciais"></textarea>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-6">
-                                    <label for="exampleInputPassword1">Salário base</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Salário">
-                                </div>
-                                <div class="form-group col-6">
-                                    <label for="exampleInputPassword1">Área</label>
-                                    <select class="form-control" id="exampleInputPassword1">
-                        <option value="0">Desenvolvimento</option>
-                        <option value="1">Design</option>
-                        <option value="2">Testes</option>
-                      </select>
-                                </div>
-                            </div>
-                            <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Vaga para PCD</label>
-                            </div>
-                            <button type="submit" class="btn btn-success float-right">Salvar</button>
-                        </form>
+    <div class="container pt-3">
+
+        <p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Nova vaga
+      </a>
+        </p>
+        <div class="collapse mb-3" id="collapseExample">
+            <div class="card card-body">
+                <form class="row mb-0">
+                    <div class="form-group col-12">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome">
                     </div>
-                </div>
+                    <div class="form-group col-12">
+                        <label for="descricao">Descrição</label>
+                        <textarea class="form-control" id="descricao" rows="3"></textarea>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6">
+                        <label for="habilidades">Habilidades necessárias</label>
+                        <textarea class="form-control" id="habilidades" rows="3"></textarea>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6">
+                        <label for="diferenciais">Diferenciais</label>
+                        <textarea class="form-control" id="diferenciais" rows="3"></textarea>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6">
+                        <label for="salario">Salário Base</label>
+                        <input type="text" class="form-control" id="salario">
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6">
+                        <label for="area">Área</label>
+                        <select class="form-control" id="area">
+              <option>Desenvolvimento</option>
+              <option>Design</option>
+              <option>Teste</option>
+            </select>
+                    </div>
+                    <div class="form-group form-check col-sm-12 col-md-6 ml-3">
+                        <input type="checkbox" class="form-check-input" id="isPCD">
+                        <label class="form-check-label" for="isPCD">Vaga para PCD</label>
+                    </div>
+
+                    <div class="form-group col-12 text-right mb-0">
+                        <button type="submit" class="btn btn-success">Criar vaga</button>
+                    </div>
+
+                </form>
             </div>
         </div>
-        <div class="row">
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="./developer.png" alt="Card image cap">
+
+        <div class="row ">
+
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="developer.png" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Desenvolvedor Front-end JR</h5>
-                        <p class="card-text">
-                            Profissional que goste de trabalhar em um ambiênte dinâmico com desenvolvimento de software e que tenha experiência em desenvolvimento full stack.
-                        </p>
-                        <span><strong>Salario base:</strong></span>
-                        <p>
-                            R$ 3500,00
-                        </p>
-                        <a href="#" class="btn btn-warning icon"><i class="far fa-edit"></i></a>
-                        <a href="#" class="btn btn-danger icon"><i class="far fa-trash-alt"></i></a>
+                        <div>
+                            <b>Descrição:</b>
+                            <p>Profissional que goste de trabalhar em um ambiênte dinâmico com desenvolvimento de software e que tenha experiência em desenvolvimento full stack.</p>
+
+                            <b>Salário base:</b>
+                            <p>R$ 3.500,00</p>
+
+                        </div>
+                        <a href="#" class="btn btn-warning">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a href="#" class="btn btn-danger">
+                            <i class="far fa-trash-alt"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="./designer.png" alt="Card image cap">
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="designer.png" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Desenvolvedor Front-end JR</h5>
-                        <p class="card-text">
-                            Profissional que goste de trabalhar em um ambiênte dinâmico com desenvolvimento de software e que tenha experiência em desenvolvimento full stack.
-                        </p>
-                        <span><strong>Salario base:</strong></span>
-                        <p>
-                            R$ 3500,00
-                        </p>
-                        <a href="#" class="btn btn-warning icon"><i class="far fa-edit"></i></a>
-                        <a href="#" class="btn btn-danger icon"><i class="far fa-trash-alt"></i></a>
+                        <h5 class="card-title">Designer UI/UX PL</h5>
+                        <div>
+
+                            <b>Descrição:</b>
+                            <p>Profissional que goste de trabalhar em um ambiênte dinâmico com desenvolvimento de software e que tenha experiência em desenvolvimento full stack.</p>
+
+                            <b>Salário base:</b>
+                            <p>R$ 3.500,00</p>
+
+                        </div>
+                        <a href="#" class="btn btn-warning">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a href="#" class="btn btn-danger">
+                            <i class="far fa-trash-alt"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="./tester.png" alt="Card image cap">
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="tester.png" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Desenvolvedor Front-end JR</h5>
-                        <p class="card-text">
-                            Profissional que goste de trabalhar em um ambiênte dinâmico com desenvolvimento de software e que tenha experiência em desenvolvimento full stack.
-                        </p>
-                        <span><strong>Salario base:</strong></span>
-                        <p>
-                            R$ 3500,00
-                        </p>
-                        <a href="#" class="btn btn-warning icon"><i class="far fa-edit"></i></a>
-                        <a href="#" class="btn btn-danger icon"><i class="far fa-trash-alt"></i></a>
+                        <h5 class="card-title">Tester - Estágio</h5>
+                        <div>
+
+                            <b>Descrição:</b>
+                            <p>Profissional que goste de trabalhar em um ambiênte dinâmico com desenvolvimento de software e que tenha experiência em desenvolvimento full stack.</p>
+
+                            <b>Salário base:</b>
+                            <p>R$ 3.500,00</p>
+
+                        </div>
+                        <a href="#" class="btn btn-warning">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a href="#" class="btn btn-danger">
+                            <i class="far fa-trash-alt"></i>
+                        </a>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 </body>
 
 </html>

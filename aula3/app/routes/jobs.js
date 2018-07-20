@@ -14,7 +14,7 @@ module.exports = app => {
             })
             return res.send(jobs);
         } catch (error) {
-            return releaseEvents.status(500).send('error');
+            return res.status(500).send('error');
         }
 
     })
@@ -29,11 +29,20 @@ module.exports = app => {
 
     app.post('/jobs', async(req, res) => {
         try {
-            let jobsLength = jobs.length;
-            let job = createJob(req.body);
-            jobs.push(job);
-            if (jobs.length > jobsLength) return res.send('Adicionado com sucesso');
-            return res.status(500).send('Ops! Aconteceu um erro tentando cadastrar a vaga.');
+
+            const job = createJob(req.body);
+            const fbReturn = await jobsCollection.doc().set(job);
+            if (fbReturn) {
+                return res.send('Adicionado com sucesso');
+            } else {
+                throw Error;
+            }
+
+            // let jobsLength = jobs.length;
+            // let job = createJob(req.body);
+            // jobs.push(job);
+            // if (jobs.length > jobsLength) return res.send('Adicionado com sucesso');
+            // return res.status(500).send('Ops! Aconteceu um erro tentando cadastrar a vaga.');
         } catch (error) {
             return res.status(500).send(error);
         }
