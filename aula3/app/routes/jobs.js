@@ -1,6 +1,7 @@
 'use strict';
 
 const Job = require('../../model/job');
+const fbConfig = require('../../config/firebaseConfig');
 module.exports = app => {
 
     const jobsCollection = app.config.firebaseConfig.collection('jobs');
@@ -23,9 +24,30 @@ module.exports = app => {
         return res.redirect('http://localhost:3000/vjobs/index.html');
     })
 
+    //not work yet
     app.get('/jobs/:id', async(req, res) => {
-        return res.send(jobs.find(el => el.id === req.params.id));
+
+        let jobsRef = fbConfig.collection('jobs');
+        let query = jobsRef.where(req.params.id, '==', true).get().then(snapshot => {
+            snapshot.forEach(doc => {
+                return res.send(doc.id, '=>', doc.data());
+            });
+        }).catch(err => {
+            console.log('Error getting documents', err);
+        })
+
     })
+
+    // var citiesRef = db.collection('cities');
+    // var query = citiesRef.where('capital', '==', true).get()
+    //     .then(snapshot => {
+    //         snapshot.forEach(doc => {
+    //             console.log(doc.id, '=>', doc.data());
+    //         });
+    //     })
+    //     .catch(err => {
+    //         console.log('Error getting documents', err);
+    //     });
 
     app.post('/jobs', async(req, res) => {
         try {
