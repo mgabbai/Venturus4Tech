@@ -1,23 +1,47 @@
 import React, {Component} from 'react';
 import JobCard from './JobsCard';
+import vagas from '../../assets/vagas';
 
 class JobList extends Component{
+
+    state = {
+        jobs: [],
+        selectedId: null,
+        hasError: false
+    }
+
     constructor(){
         super();
     }
 
+    componentDidMount(){
+        this.setState({jobs: vagas});
+    }
+
+    jobRemoveHandler = (id, nome) =>{
+        if(window.confirm(`Deseja realmente excluir essa vaga ${nome}?`)){
+            window.alert(`Vaga excluida com sucesso!`);
+        }
+    }
+
+    jobEditHandler = (id) => {
+        window.alert("Editado com sucesso!")
+    }
+    
     render(){
+        let vagasEncontradas = this.state.jobs.map(vaga => {
+            return (
+                <div className = "col-sm-12 col-md-6 col-lg-4 mb-3" key={vaga.id}>
+                    <JobCard name={vaga.name} area={vaga.area} 
+                    description={vaga.description}
+                    salary={vaga.salary} removeHandler={() => this.jobRemoveHandler(vaga.id,vaga.name)} editHandler={() => this.jobEditHandler(vaga.id)}></JobCard>
+                </div>
+            ) 
+        
+        })
         return(
              <div className="row ">
-                <div className="col-sm-12 col-md-6 col-lg-4 mb-3">
-                    <JobCard name="Desenvolvedor Front-end JR" area="Desenvolvimento" description="Profissional que goste de trabalhar em um ambiênte dinâmico com desenvolvimento de software e que tenha experiência em desenvolvimento full stack." salary="3000"></JobCard>
-                </div>
-                <div className="col-sm-12 col-md-6 col-lg-4 mb-3">
-                    <JobCard name="Designer UI/UX PL    " area="Designer" description="Profissional que goste de trabalhar em um ambiênte dinâmico com desenvolvimento de software e que tenha experiência em desenvolvimento full stack." salary="50"></JobCard>
-                </div>
-                <div className="col-sm-12 col-md-6 col-lg-4 mb-3">
-                    <JobCard name="Tester - Estágio" area="Tester" description="Profissional que goste de trabalhar em um ambiênte dinâmico com desenvolvimento de software e que tenha experiência em desenvolvimento full stack." salary="10"></JobCard>
-                </div>
+                {vagasEncontradas}
             </div>
         )
     }

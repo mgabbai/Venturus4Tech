@@ -5,35 +5,35 @@ const jobsForm = () => {
     return (
         <div>
             <p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a className="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                     Nova vaga
                 </a>
             </p>
-            <div class="collapse mb-3" id="collapseExample">
-                <div class="card card-body">
+            <div className="collapse mb-3" id="collapseExample">
+                <div className="card card-body">
                     <form className="row mb-0">
                         <div className="form-group col-12">
-                            <label for="nome">Nome</label>
+                            <label htmlFor="nome">Nome</label>
                             <input type="text" className="form-control" id="nome"/>
                         </div>
                         <div className="form-group col-12">
-                            <label for="descricao">Descrição</label>
+                            <label htmlFor="descricao">Descrição</label>
                             <textarea className="form-control" id="descricao" rows="3"></textarea>
                         </div>
                         <div className="form-group col-sm-12 col-md-6">
-                            <label for="habilidades">Habilidades necessárias</label>
+                            <label htmlFor="habilidades">Habilidades necessárias</label>
                             <textarea className="form-control" id="habilidades" rows="3"></textarea>
                         </div>
                         <div className="form-group col-sm-12 col-md-6">
-                            <label for="diferenciais">Diferenciais</label>
+                            <label htmlFor="diferenciais">Diferenciais</label>
                             <textarea className="form-control" id="diferenciais" rows="3"></textarea>
                         </div>
                         <div className="form-group col-sm-12 col-md-6">
-                            <label for="salario">Salário Base</label>
+                            <label htmlFor="salario">Salário Base</label>
                             <input type="text" className="form-control" id="salario"/>
                         </div>
                         <div className="form-group col-sm-12 col-md-6">
-                            <label for="area">Área</label>
+                            <label htmlFor="area">Área</label>
                             <select className="form-control" id="area">
                                 <option>Desenvolvimento</option>
                                 <option>Design</option>

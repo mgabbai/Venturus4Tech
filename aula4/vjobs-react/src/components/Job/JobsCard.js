@@ -34,8 +34,8 @@ return (
                     <b>Salário base:</b>
                     <p>R$ {props.salary}</p>
                 </div>
-                <a href="#" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                <a href="#" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                <button onClick={props.editHandler} className="btn btn-warning"><i className="fas fa-edit mr-l"> Editar</i></button> 
+                <button onClick={props.removeHandler} className="btn btn-danger"><i className="far fa-trash-alt mr-l"> Excluir</i></button>
             </div>
         </div>
 )}
