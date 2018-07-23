@@ -35,7 +35,7 @@ const jobsForm = () => {
                         </div>
                         <div className="form-group form-check col-sm-12 col-md-6 ml-3">
                             <input type="checkbox" className="form-check-input" id="isPCD"/>
-                            <label className="form-check-label" for="isPCD">Vaga para PCD</label>
+                            <label className="form-check-label" htmlFor="isPCD">Vaga para PCD</label>
                         </div>
 
                         <div className="form-group col-12 text-right mb-0">
