@@ -4,13 +4,6 @@ import React from 'react';
 const jobsForm = () => {
     return (
         <div>
-            <p>
-                <a className="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    Nova vaga
-                </a>
-            </p>
-            <div className="collapse mb-3" id="collapseExample">
-                <div className="card card-body">
                     <form className="row mb-0">
                         <div className="form-group col-12">
                             <label htmlFor="nome">Nome</label>
@@ -51,8 +44,6 @@ const jobsForm = () => {
 
                     </form>
                 </div>
-            </div>
-        </div>
     );}
 
     export default jobsForm;

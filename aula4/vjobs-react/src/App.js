@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/navigation/Header/Header';
 import JobsList from './components/Job/JobsList';
 import JobsForm from './components/Job/JobsForm';
+import Collapse from './components/hoc/Collapse/Collapse';
 
 
 class App extends Component {
@@ -12,7 +13,9 @@ class App extends Component {
                 <Header/>
                 
                 <div className="container pt-3">
-                    <JobsForm/>
+                    <Collapse innerText="Criar Vaga">
+                        <JobsForm/>
+                    </Collapse>
                     <JobsList/>
                 </div>
             </div> 
