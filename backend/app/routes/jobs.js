@@ -26,29 +26,16 @@ module.exports = app => {
         }
     })
     
-    app.post('/jobs', async (req, res) => {
-        try {
-            let job = {
-                "name": req.body.name, 
-                "salary": req.body.salary,
-                "area": req.body.area,
-                "description": req.body.description,
-                "skills": req.body.skills,
-                "differentials": req.body.differentials,
-                "isPcd": req.body.isPcd,
-                "isActive": req.body.isActive
-            }
-            const fbReturn = await jobsCollection.add(job);
-            if (fbReturn) {
-                return res.send(`Vaga ${fbReturn.id} adicionada com sucesso!`);
-            } else {
-                throw Error;
-            }
-        } catch (error) {
-            return res.status(500).send(error);        
-        }
-    })
     
+    app.post('/jobs', async(req,res) => {
+        jobsCollection.add(req.body)
+                then(ref => {
+                    return res.send(ref.id);
+                }).catch(error => {
+                    return res.status(500).send(error);
+                });
+    })
+
     app.put('/jobs/:id', async (req, res) => {
         try {
             if (!req.body) {

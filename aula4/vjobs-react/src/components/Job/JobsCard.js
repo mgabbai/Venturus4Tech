@@ -11,10 +11,10 @@ const jobsCard = (props) => {
         case 'Desenvolvimento':
             imagem = developerImg;
             break;
-        case 'Designer':
+        case 'Design':
             imagem = designerImg;
             break;
-        case 'Tester':
+        case 'Teste':
             imagem = testerImg;
             break;
         default:

@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../../assets/images/logo-h-vjobs.png';
+import {Link} from 'react-router-dom';
 
 const header = () => 
      ( 
@@ -12,8 +13,8 @@ const header = () =>
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                    <a className="nav-item nav-link active text-white" href="#">Vagas</a>
-                    <a className="nav-item nav-link text-white" href="#">Sobre</a>
+                    <Link className="nav-item nav-link active text-white" to='/vagas'>Vagas</Link>
+                    <Link className="nav-item nav-link text-white" to='/sobre'>Sobre</Link>
                 </div>
             </div>
         </nav>

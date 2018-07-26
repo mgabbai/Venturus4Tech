@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/navigation/Header/Header';
 import JobsList from './components/Job/JobsList';
-import JobsForm from './components/Job/JobsForm';
-import Collapse from './components/hoc/Collapse/Collapse';
-import Loading from './components/navigation/Loading/Loading';
+import Main from './components/navigation/Main/Main';
+import {Switch, Route} from 'react-router-dom';
+import About from './components/About/About';
 
 
 class App extends Component {
@@ -12,16 +12,13 @@ class App extends Component {
         return ( 
             <div className = "App">
                 <Header/>
-                
-                <div className="container pt-3">
-                    <Collapse innerText="Criar Vaga" collapseId="formCollapse" classCollapse="btn-primary">
-                        <JobsForm/>
-                    </Collapse>
-                    {/*<Collapse innerText="Mostrar Vaga" collapseId="listCollapse" classCollapse="btn-secondary">
-                        <JobsList/>
-                    </Collapse>*/}
-                    <JobsList/>                   
-                </div>
+                <Main>
+                    <Switch>
+                        <Route exact path='/' component={JobsList}></Route>
+                        <Route path='/vagas' component={JobsList}></Route>
+                        <Route path='/sobre' component={About}></Route>
+                    </Switch>
+                </Main>    
             </div> 
         );
     }
